@@ -1,5 +1,4 @@
 Feature: getAndPost
-
   Scenario: create_Topic1
     Given url 'http://localhost:8080/topic'
     And request {name:'Yeahmarakuyeah_extremo'}
@@ -8,7 +7,13 @@ Feature: getAndPost
 
   Scenario: create_Topic2
     Given url 'http://localhost:8080/topic'
-    And request {name:''}
+    And request {name:'Marta'}
+    When method post
+    Then status 200
+
+  Scenario: create_Topic3
+    Given url 'http://localhost:8080/topic'
+    And request {name:'Angry Birds'}
     When method post
     Then status 200
 
